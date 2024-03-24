@@ -1,10 +1,27 @@
+# MarcusTF.com
 
-# React Web App Template
-[![](https://github.com/MarcusTF/vite-react-template/actions/workflows/test.yml/badge.svg)](https://github.com/MarcusTF/vite-react-template/actions/workflows/test.yml)
+## About this Repo:
 
-Description of the project goes here.
+This is the public repository for my personal website, [MarcusTF.com](https://marcustf.com). The website is built using React and Vite.
 
-> *This project was bootstrapped with [`Vite`](https://vitejs.dev/).*
+- Did I _need_ to use React for my personal site?
+  - [x] No 😀👉👉
+- Is it the _best_ tool for the job?
+  - [x] Probably not 🤷‍♂️ (but also it's **not** _**not** the best tool_... I guess?)
+- Is it super over-engineered?
+  - [x] **_Absolutely_ 😅** _Have you **SEEN** the dependency list? **And** Unit tests!? `graphql-codegen`?????_
+
+React is my bread and butter, so I wanted to use it to build my personal site. I figured it'd give a peek into how I like to build more robust things.
+
+I considered using other tools like Qwik, Next.js, or even plain HTML, but I wanted to reduce as much friction as possible so that I'm actually motivated to update the site. When I'm not working, finding the energy to work on personal projects can be tough, so I figured why not make it as easy as possible? Anyway... here we are. Besides, it gives me a chance to play around with some new tools and libraries if I want to.
+
+### Like this setup? Check out the [template](https://github.com/MarcusTF/vite-react-template).
+
+It's got all the goodies you need to get started with a robust React project.
+
+_(It's **super** overkill for a personal site, but we've already established that. However, if you're kickstarting something big, I think this is a really robust and organized way to go about it.)_
+
+> _This project was bootstrapped with [`Vite`](https://vitejs.dev/)._
 
 ## Libraries
 

@@ -1,0 +1,31 @@
+@use "assets/sass/colors" as *;
+@use "assets/sass/fonts" as *;
+@use "assets/sass/animations" as *;
+
+.about {
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 2rem;
+  font-family: $baseFont;
+  color: $vanilla;
+  h3 {
+    font-family: $baseFont;
+    color: $vanilla;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 50px;
+  }
+  .about-me {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    max-height: 100%;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: $vanilla $chocolate;
+    padding: 0.5rem;
+  }
+}

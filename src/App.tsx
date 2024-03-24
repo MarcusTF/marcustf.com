@@ -2,8 +2,7 @@ import { useContext } from "react"
 import { Route, Routes, useLocation } from "react-router-dom"
 
 import { Context } from "context"
-import { HelloWorld } from "pages"
-import { Dashboard } from "pages/Dashboard"
+import { About, Dashboard, Portfolio } from "pages"
 
 import "./App.scss"
 
@@ -21,7 +20,9 @@ function App() {
       {/* <Route element={<PrivateRoute />} path='/'> */}
       {/* The dashboard is a template for the rest of the pages and contains an outlet */}
       <Route element={<Dashboard />} path='/'>
-        <Route element={<HelloWorld />} path='/' />
+        <Route path='/' />
+        <Route element={<About />} path='/about' />
+        <Route element={<Portfolio />} path='/portfolio' />
       </Route>
       {/* </Route> */}
     </Routes>

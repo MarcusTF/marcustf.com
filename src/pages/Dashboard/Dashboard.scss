@@ -1,12 +1,171 @@
-.dashboard {
-  width: 100%;
-  height: 100%;
-  display: grid;
-  grid-template-rows: auto 1fr;
-  main {
+@use "assets/sass/colors" as *;
+@use "assets/sass/fonts" as *;
+@use "assets/sass/animations" as *;
+
+@mixin content_dynamic_styles {
+  &--home {
+    transform: skewX(15deg);
+  }
+  &--about {
+    overflow: hidden;
+  }
+}
+@mixin decorative_stripe_dynamic_styles {
+  &--home {
+    min-width: 10px;
     width: 100%;
-    height: 100%;
-    overflow-y: auto;
-    overflow-x: hidden;
+    max-width: 2vw;
+  }
+  &--about,
+  &--portfolio {
+    min-width: 10px;
+    width: 100%;
+    max-width: 10px;
+  }
+}
+
+@mixin secondary-nav_dynamic_styles {
+  &--home {
+    min-width: 50px;
+    width: 100%;
+    max-width: 10vw;
+  }
+  &--about,
+  &--portfolio {
+    min-width: 20px;
+    width: 100%;
+    max-width: 20px;
+  }
+}
+@mixin main_dynamic_styles {
+  &--home {
+    min-width: 125px;
+    width: 100%;
+    max-width: 30vw;
+  }
+  &--about,
+  &--portfolio {
+    padding: calc(1.5rem + 2vw) calc(1rem + 3vw);
+    min-width: 125px;
+    width: 100%;
+    max-width: 90vw;
+  }
+}
+
+@mixin transitions {
+  $transition_speed: 1s;
+  transition:
+    min-width $transition_speed,
+    width $transition_speed,
+    max-width $transition_speed,
+    padding $transition_speed,
+    transform $transition_speed,
+    color $transition_speed;
+  transition-behavior: smooth;
+  transition-timing-function: cubic-bezier(0.38, 0.11, 0.12, 1);
+}
+
+.dashboard {
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: row-reverse;
+  height: 100%;
+  width: 100%;
+  background-color: $vanilla;
+  .sidebar {
+    flex-shrink: 0;
+    padding: 1rem;
+    background-color: transparent;
+    color: $chocolate;
+    grid-area: sidebar;
+    text-align: right;
+    h1 {
+      font-family: $titleFont;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 21px;
+      line-height: 26px;
+    }
+    h2 {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 17px;
+      line-height: 21px;
+    }
+    nav > ul {
+      @include fade-in;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      line-height: 1.2rem;
+      list-style: none;
+      padding-top: 2rem;
+      font-family: $baseFont;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 15px;
+
+      li {
+        list-style: none;
+        a {
+          color: $chocolate;
+          text-decoration: none;
+          border-radius: 4px;
+          transition:
+            color 0.3s,
+            background-color 0.3s,
+            padding 0.3s;
+          &:focus-visible {
+            padding: 0 0.5rem;
+            outline: none;
+            outline-offset: 2px;
+            background-color: transparentize($peach, 0.4);
+          }
+          &:hover {
+            // color: $latte;
+            padding: 0 0.5rem;
+            background-color: transparentize($peach, 0.4);
+          }
+        }
+      }
+    }
+  }
+  .content {
+    font-family: $baseFont;
+    flex-grow: 1;
+    flex-shrink: 1;
+    gap: 0.5rem;
+    justify-content: center;
+    display: flex;
+    grid-area: content;
+    @include content_dynamic_styles;
+    @include transitions;
+    .decorative-stripe,
+    .secondary-nav,
+    main {
+      @include transitions;
+      height: 100%;
+    }
+    .decorative-stripe {
+      background-color: $peach;
+      min-width: 10px;
+      width: 100%;
+      max-width: 2vw;
+      @include decorative_stripe_dynamic_styles;
+    }
+    .secondary-nav {
+      background-color: $latte;
+      min-width: 50px;
+      width: 100%;
+      max-width: 10vw;
+      @include secondary-nav_dynamic_styles;
+    }
+    .main {
+      background-color: $chocolate;
+      min-width: 125px;
+      width: 100%;
+      max-width: 30vw;
+      @include main_dynamic_styles;
+    }
   }
 }

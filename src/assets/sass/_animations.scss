@@ -1,0 +1,7 @@
+@mixin fade-in($duration: 0.5s, $timing-function: ease-in-out) {
+  animation: fadeIn $duration $timing-function;
+}
+
+@mixin fade-right($duration: 0.5s, $timing-function: ease-in-out) {
+  animation: fadeRight $duration $timing-function;
+}

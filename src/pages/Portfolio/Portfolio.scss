@@ -1,2 +1,23 @@
 .portfolio {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .TEST_BOX {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    width: 100px;
+    height: 100px;
+    &--blue {
+      background-color: blue;
+    }
+    &--green {
+      background-color: green;
+    }
+    &--yellow {
+      background-color: yellow;
+    }
+  }
 }

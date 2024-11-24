@@ -1,2 +1,3 @@
-// example:
-// export { Button } from "./Button"
+export { DynamicNavigation } from "./DynamicNavigation"
+export type { DynamicNavigationComponent, DynamicNavigationProps } from "./DynamicNavigation"
+export { SideBar } from "./SideBar"

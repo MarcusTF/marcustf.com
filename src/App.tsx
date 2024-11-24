@@ -1,14 +1,11 @@
-import { useContext } from "react"
-import { Route, Routes, useLocation } from "react-router-dom"
+import { Outlet, Route, Routes } from "react-router-dom"
 
-import { Context } from "context"
 import { About, Dashboard, Portfolio } from "pages"
+import { TEST_BOX, TEST_BOX2 } from "pages/Portfolio/Portfolio"
 
 import "./App.scss"
 
 function App() {
-  console.log(useLocation().pathname)
-  console.log(useContext(Context)?.state?.user?.isLoggedIn)
   return (
     <Routes>
       {/* Invert the logic so that the user can't access the login page if they are already logged in */}
@@ -22,8 +19,14 @@ function App() {
       <Route element={<Dashboard />} path='/'>
         <Route path='/' />
         <Route element={<About />} path='/about' />
-        <Route element={<Portfolio />} path='/portfolio' />
+        <Route element={<Outlet />} path='/portfolio'>
+          <Route path='' element={<Portfolio />} />
+          <Route path='development' element={<TEST_BOX />} />
+          <Route path='management' element={<TEST_BOX2 />} />
+          <Route path='design' element={<Portfolio />} />
+        </Route>
       </Route>
+      <Route path='*' element={<h1>404</h1>} />
       {/* </Route> */}
     </Routes>
   )

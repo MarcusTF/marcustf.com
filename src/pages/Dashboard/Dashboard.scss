@@ -16,7 +16,11 @@
     width: 100%;
     max-width: 2vw;
   }
-  &--about,
+  &--about {
+    min-width: 10px;
+    width: 100%;
+    max-width: 10px;
+  }
   &--portfolio {
     min-width: 10px;
     width: 100%;
@@ -30,11 +34,15 @@
     width: 100%;
     max-width: 10vw;
   }
-  &--about,
-  &--portfolio {
+  &--about {
     min-width: 20px;
     width: 100%;
     max-width: 20px;
+  }
+  &--portfolio {
+    min-width: 20px;
+    width: 100%;
+    max-width: 300px;
   }
 }
 @mixin main_dynamic_styles {
@@ -43,30 +51,35 @@
     width: 100%;
     max-width: 30vw;
   }
-  &--about,
-  &--portfolio {
+  &--about {
     padding: calc(1.5rem + 2vw) calc(1rem + 3vw);
     min-width: 125px;
     width: 100%;
     max-width: 90vw;
   }
+  &--portfolio {
+    padding: calc(1.5rem + 2vw) calc(1rem + 3vw);
+    min-width: 125px;
+    width: 100%;
+    max-width: 80vw;
+  }
 }
 
 @mixin transitions {
   $transition_speed: 1s;
-  transition:
-    min-width $transition_speed,
-    width $transition_speed,
-    max-width $transition_speed,
-    padding $transition_speed,
-    transform $transition_speed,
-    color $transition_speed;
-  transition-behavior: smooth;
+  // transition:
+  //   min-width $transition_speed,
+  //   width $transition_speed,
+  //   max-width $transition_speed,
+  //   padding $transition_speed,
+  //   transform $transition_speed,
+  //   color $transition_speed;
+  // transition-behavior: smooth;
   transition-timing-function: cubic-bezier(0.38, 0.11, 0.12, 1);
 }
 
 .dashboard {
-  padding: 0 1rem;
+  padding: 0 2vw;
   display: flex;
   flex-direction: row-reverse;
   height: 100%;
@@ -74,7 +87,8 @@
   background-color: $vanilla;
   .sidebar {
     flex-shrink: 0;
-    padding: 1rem;
+    padding: calc(1rem + 1vw);
+    padding-right: 0;
     background-color: transparent;
     color: $chocolate;
     grid-area: sidebar;
@@ -87,10 +101,15 @@
       line-height: 26px;
     }
     h2 {
+      display: flex;
+      flex-direction: column;
       font-style: normal;
       font-weight: 400;
       font-size: 17px;
       line-height: 21px;
+      span {
+        padding: 0;
+      }
     }
     nav > ul {
       @include fade-in;
@@ -147,6 +166,10 @@
       height: 100%;
     }
     .decorative-stripe {
+      transition:
+        min-width 0.6s,
+        width 0.6s,
+        max-width 0.6s;
       background-color: $peach;
       min-width: 10px;
       width: 100%;
@@ -154,6 +177,10 @@
       @include decorative_stripe_dynamic_styles;
     }
     .secondary-nav {
+      transition:
+        min-width 0.6s,
+        width 0.6s,
+        max-width 0.6s;
       background-color: $latte;
       min-width: 50px;
       width: 100%;
@@ -161,6 +188,10 @@
       @include secondary-nav_dynamic_styles;
     }
     .main {
+      transition:
+        min-width 0.6s,
+        width 0.6s,
+        max-width 0.6s;
       background-color: $chocolate;
       min-width: 125px;
       width: 100%;

@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "engines": {
-    "node": "21.7.1"
+    "node": "23.1.0"
   },
   "scripts": {
     "start": "concurrently \"graphql-codegen --config codegen.ts --watch\" \"vite\"",
@@ -36,6 +36,7 @@
     "@radix-ui/react-accessible-icon": "^1.0.3",
     "@radix-ui/react-accordion": "^1.1.2",
     "@radix-ui/react-select": "^2.0.0",
+    "@react-spring/web": "^9.7.3",
     "@tanstack/react-query": "^5.0.0",
     "@tanstack/react-query-devtools": "^5.0.0",
     "@tanstack/react-table": "^8.9.2",
@@ -53,6 +54,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-final-form": "^6.5.9",
+    "react-flip-toolkit": "^7.1.0",
     "react-modal": "^3.16.1",
     "react-router-dom": "^6.13.0",
     "react-toastify": "^10.0.0",
